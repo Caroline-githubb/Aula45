@@ -62,55 +62,34 @@
     </div>
 
     <script>
-
         /*
-            Com base no código-fonte, implemente as seguintes tarefas:
-
-            - [ ] Capture os valores dos inputs
-                - [ ] Valor do input nome
-                - [ ] Valor do input idade
-
-            - [ ] Com base no valor da variável anoAtual, calcule em que ano o usuário nasceu
-            
-            - [ ] Com base no anoNascimento, condicione qual geração o usuário pertence.
-
-                Geração Baby Boomers 1946 até 1964
-                
-                Geração X 1965 até 1980
-
-                Geração Y ou Millennial 1981 à 1996
-    
-                Geração Z 1997 à 2010
-
-                Geração Alpha 2011 até o momento
-
-            - [ ] Atualize os valores no modal <div class="modal fade" id="modal" tabindex="-1">, conforme os comentários...
-        */
-
-        let anoAtual = 2022;
-        let anoNascimento = document.getElementById('anoNascimento');
+                    Com base no código-fonte, implemente as seguintes tarefas:            
+                */
+        // - [ ] Capture os valores dos inputs
+        // - [ ] Valor do input nome
+        // - [ ] Valor do input idade
         let nomeDoUsuario = document.getElementById('nome');
         let idadeDoUsuario = document.getElementById('idade');
         let botao = document.querySelector('#botao');
-        let titulo = document.getElementById('titulo');
+        let titulo = document.querySelector('#titulo');
 
-        function capturarValorNome() {
+        function capturarNome() {
             titulo.innerText = `Olá, ${nomeDoUsuario.value}`;
         }
 
-        function capturarValorIdade() {
-            titulo.innerText = `${idadeDoUsuario.value}`;
-        }
-
+        // - [ ] Com base no valor da variável anoAtual, calcule em que ano o usuário nasceu
+        let anoAtual = 2022;
+        let anoNascimento = document.getElementById('anoNascimento');
         function calculoAnoNascimento() {
-            //anoNascimento.innerText = `Você nasceu em ${anoAtual - idadeDoUsuario.value} e pertence a geração {geracao}.`  
+            //anoNascimento.innerText = `Você nasceu em ${anoAtual-idadeDoUsuario.value} e pertence a geração {geração}`
             return anoAtual - idadeDoUsuario.value;
-
         }
 
-        function geracaoUsuario() {
+        // - [ ] Com base no anoNascimento, condicione qual geração o usuário pertence.
+        function definirGeracao() {
             let ano = calculoAnoNascimento();
             let geracao;
+
             if (ano >= 1946 && ano <= 1964) {
                 geracao = "Baby Boomers"
             }
@@ -121,22 +100,21 @@
                 geracao = "Y ou Millennial"
             }
             else if (ano >= 1997 && ano <= 2010) {
-                geracao = "Geração Z"
+                geracao = "Z"
             }
             else if (ano >= 2011) {
                 geracao = "Alpha"
             }
-            anoNascimento.innerText = `Você nasceu em ${ano} e pertence a geração ${geracao}.`
-
+            anoNascimento.innerText = `Você nasceu em ${ano} e pertence a geração ${geracao}`
         }
-        
+
         function clickCalcular() {
-            capturarValorNome();
-            geracaoUsuario()
+            capturarNome();
+            definirGeracao();
         }
 
         botao.addEventListener('click', clickCalcular);
-        
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
