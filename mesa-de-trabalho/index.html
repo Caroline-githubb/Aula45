@@ -68,21 +68,21 @@
         // - [ ] Capture os valores dos inputs
         // - [ ] Valor do input nome
         // - [ ] Valor do input idade
-        let nomeDoUsuario = document.getElementById('nome');
-        let idadeDoUsuario = document.getElementById('idade');
-        let botao = document.querySelector('#botao');
-        let titulo = document.querySelector('#titulo');
+        //let nomeDoUsuario = document.getElementById('nome');
+        //let idadeDoUsuario = document.getElementById('idade');
+        //let botao = document.querySelector('#botao');
+        //let titulo = document.querySelector('#titulo');
 
         function capturarNome() {
-            titulo.innerText = `Olá, ${nomeDoUsuario.value}`;
+            titulo.innerText = `Olá, ${nome.value}`;
         }
 
         // - [ ] Com base no valor da variável anoAtual, calcule em que ano o usuário nasceu
         let anoAtual = 2022;
-        let anoNascimento = document.getElementById('anoNascimento');
+        //let anoNascimento = document.getElementById('anoNascimento');
         function calculoAnoNascimento() {
             //anoNascimento.innerText = `Você nasceu em ${anoAtual-idadeDoUsuario.value} e pertence a geração {geração}`
-            return anoAtual - idadeDoUsuario.value;
+            return anoAtual - idade.value;
         }
 
         // - [ ] Com base no anoNascimento, condicione qual geração o usuário pertence.
